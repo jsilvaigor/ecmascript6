@@ -1,0 +1,16 @@
+.row {
+    overflow: auto;
+}
+
+.column {
+    float: left;
+    margin-left: 2%;
+    width: 48%;
+}
+.column:first-child {
+    margin-left: 0;
+}
+
+.column h4 {
+    margin-bottom: 0;
+}
