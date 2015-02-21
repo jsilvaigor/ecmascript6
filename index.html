@@ -91,8 +91,8 @@ test();
 
                             <div class="column">
                                 <h4>ES6</h4>
-                            <pre>
-                                <code data-trim contenteditable>
+                                <pre>
+                                    <code data-trim contenteditable>
 function test() {
   let x = 1;
   let y = 2;
@@ -105,8 +105,8 @@ function test() {
   console.log(x, y);
 }
 test();
-								</code>
-                            </pre>
+                                    </code>
+                                </pre>
                             </div>
                         </div>
                     </section>
@@ -130,6 +130,178 @@ function test() {
                         </pre>
                     </section>
                 </section>
+
+                <section>
+                    <section>
+                        <h2>Funkcije: default parametri</h2>
+
+                        <div class="row">
+                            <div class="column">
+                                <h4>ES5</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+function logName(name) {
+  name = name || 'Unknown';
+  console.log('Name: ', name);
+}
+
+logName();
+logName('JavaScript');
+                                    </code>
+                                </pre>
+                            </div>
+
+                            <div class="column">
+                                <h4>ES6</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+function logName(name='Unknown') {
+  console.log('Name: ', name);
+}
+
+logName();
+logName('JavaScript');
+
+//function f(x=Math.random()){...};
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Funkcije: rest parametri</h2>
+
+                        <div class="row">
+                            <div class="column">
+                                <h4>ES5</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+function add(x) {
+  var result = x;
+
+  // arguments.forEach(...)
+  for (var i = 1;
+      i < arguments.length; i++) {
+    result += arguments[i];
+  }
+
+  return result;
+}
+
+console.log(add(1, 2, 3, 4, 5));
+                                    </code>
+                                </pre>
+                            </div>
+
+                            <div class="column">
+                                <h4>ES6</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+function add(x, ...numbers) {
+  var result = x;
+
+  numbers.forEach(function(y) {
+    result += y;
+  });
+
+  return result;
+}
+
+console.log(add(1, 2, 3, 4, 5));
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>spread operator</h2>
+
+                        <div class="row">
+                            <div class="column">
+                                <h4>ES5</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+function add(x, y, z) {
+  return x + y + z;
+}
+
+var numbers = [2, 4, 6];
+
+console.log(
+  add.apply(null, numbers));
+                                    </code>
+                                </pre>
+                            </div>
+
+                            <div class="column">
+                                <h4>ES6</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+function add(x, y, z) {
+  return x + y + z;
+}
+
+let numbers = [2, 4, 6];
+
+console.log(add(...numbers));
+
+// Primjer 2
+let n2 =
+  [1, 2, ...numbers, 7, ...[2, 3]];
+console.log(n2);
+// [1, 2, 2, 4, 6, 7, 2, 3]
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Destructuring</h2>
+
+                        <pre>
+                            <code data-trim contenteditable>
+let numbers = [10, 20];
+let [a, b] = numbers;
+
+console.log(a, b);
+
+let position = { lat: 42.34455, lng: 17.34235 };
+let {lat, lng} = position;
+
+console.log(lat, lng);
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Destructuring - kompleksni primjer</h2>
+
+                        <pre>
+                            <code data-trim contenteditable>
+let book = {
+  title: 'Lord of the Rings',
+  author: 'J.R.R. Tolkien',
+  pages: 550,
+  tags: ['fantasy', 'fiction'],
+  price: {
+    hardcover: 34.5,
+    softcover: 22.5
+  }
+};
+
+let {author, tags: [,tag], price: {softcover}} = book;
+
+console.log(author, tag, softcover);
+                            </code>
+                        </pre>
+                    </section>
+
+                </section>
+
 
                 <section>
                     <h2>Template strings</h2>
@@ -164,7 +336,134 @@ var obj = {
                 </section>
 
                 <section>
-                    <h2>Arrows</h2>
+                    <section>
+                        <h2>Arrows</h2>
+
+                        <div class="row">
+                            <div class="column">
+                                <h4>ES5</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+var square = function(x) {
+  return x * x;
+};
+var add = function(x, y) {
+  return x + y;
+};
+var total = function() {
+  return square(add(5, 3));
+};
+
+console.log('5 * 5 = ', square(5));
+console.log('2 + 3 = ', add(2, 3));
+console.log(
+  '(5 + 3)*(5 + 3) = ', total());
+                                    </code>
+                                </pre>
+                            </div>
+
+                            <div class="column">
+                                <h4>ES6</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+let square = x => x * x;
+let add = (x, y) => x + y;
+let total = () => square(add(5,3));
+
+console.log('5 * 5 = ', square(5));
+console.log('2 + 3 = ', add(2, 3));
+console.log(
+  '(5 + 3)*(5 + 3) = ', total());
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Multiline arrows</h2>
+
+                        <div class="row">
+                            <div class="column">
+                                <h4>ES5</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+var add = function(x, y) {
+  var result = x + y;
+  return result;
+};
+
+console.log('2 + 3 = ', add(2, 3));
+                                    </code>
+                                </pre>
+                            </div>
+
+                            <div class="column">
+                                <h4>ES6</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+let add = (x, y) => {
+  let result = x + y;
+  return result;
+};
+
+console.log('2 + 3 = ', add(2, 3));
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>this</h2>
+
+                        <div class="row">
+                            <div class="column">
+                                <h4>ES5</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+var obj = {
+  index: 1,
+
+  loadData: function() {
+    var self = this;
+
+   $.get('http://ip.jsontest.com')
+      .then(function(data) {
+        console.log(
+          'IP: ' + data.ip,
+          'Index: ' + self.index)
+      });
+  }
+};
+
+obj.loadData();
+                                    </code>
+                                </pre>
+                            </div>
+
+                            <div class="column">
+                                <h4>ES6</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+let obj = {
+  index: 1,
+
+  loadData: function() {
+   $.get('http://ip.jsontest.com')
+      .then((data) => {
+        console.log(
+          'IP: ' + data.ip,
+          'Index: ' + this.index)
+      });
+  }
+};
+
+obj.loadData();
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </section>
                 </section>
 
                 <section>
