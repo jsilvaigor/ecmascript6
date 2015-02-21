@@ -278,7 +278,8 @@ console.log(lat, lng);
                         </pre>
                     </section>
                     <section>
-                        <h2>Destructuring - kompleksni primjer</h2>
+                        <h2>Destructuring</h2>
+                        <h3>kompleksni objekti</h3>
 
                         <pre>
                             <code data-trim contenteditable>
@@ -299,12 +300,81 @@ console.log(author, tag, softcover);
                             </code>
                         </pre>
                     </section>
+                    <section>
+                        <h2>Destructuring</h2>
+                        <h3>parametri funkcije</h3>
+                        <pre>
+                            <code data-trim contenteditable>
+let httpPost = function(url, {
+    cache = true,
+    contentType = 'application/json',
+    timeout = 2500,
+    headers = {}
+  }) {
+  console.log(url, cache, contentType, timeout, headers);
+};
 
+httpPost('http://google.com', {
+  cache: false,
+  headers: {
+    Authorization: 'Bearer SOMETOKEN'
+  }
+});
+                            </code>
+                        </pre>
+                    </section>
                 </section>
-
 
                 <section>
                     <h2>Template strings</h2>
+
+                    <div class="row">
+                        <div class="column">
+                            <h4>ES5</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+var firstName = 'Miroslav',
+    lastName = 'Popovic';
+var fullName =
+    firstName + ' ' + lastName;
+
+console.log(fullName);
+
+var add = function(x, y) {
+  return x + ' + ' + y +
+    ' = ' + (x+y);
+};
+
+console.log(add(10, 5));
+console.log('Više linija\n' +
+    'sa plus operatorom');
+                                    </code>
+                                </pre>
+                        </div>
+
+                        <div class="column">
+                            <h4>ES6</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+let firstName = 'Miroslav',
+    lastName = 'Popovic';
+let fullName =
+    `${firstName} ${lastName}`;
+
+console.log(fullName);
+
+let add = function(x, y) {
+  return `${x} + ${y} = ${x+y}`;
+};
+
+console.log(add(10, 5));
+console.log(`Podrška
+    za više linija sa backticks`);
+                                    </code>
+                                </pre>
+                        </div>
+                    </div>
+
                 </section>
 
                 <section>
@@ -329,10 +399,6 @@ var obj = {
 };
                             </code>
                         </pre>
-                </section>
-
-                <section>
-                    <h2>Destructuring</h2>
                 </section>
 
                 <section>
@@ -467,7 +533,14 @@ obj.loadData();
                 </section>
 
                 <section>
-                    <h2>Classes</h2>
+                    <section>
+                        <h2>Classes</h2>
+
+
+                    </section>
+                    <section>
+
+                    </section>
                 </section>
 
                 <section>
@@ -477,7 +550,7 @@ obj.loadData();
                 <section>
                     <h2>Ostalo</h2>
                     <ul>
-                        <li>prošireni object literals</li>
+                        <li>tagged templates<br/><code>upper`${firstName} ${lastName}`</code></li>
                         <li>podrška za cijeli Unicode</li>
                         <li>binarni i oktalni literali - <code>0b111110111</code>, <code>0o767</code> = 503</li>
                         <li>tail calls - rekurzivne funkcije ne izazivaju Stack Overflow grešku</li>
