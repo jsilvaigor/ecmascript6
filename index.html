@@ -303,6 +303,7 @@ console.log(author, tag, softcover);
                     <section>
                         <h2>Destructuring</h2>
                         <h3>parametri funkcije</h3>
+
                         <pre>
                             <code data-trim contenteditable>
 let httpPost = function(url, {
@@ -534,12 +535,107 @@ obj.loadData();
 
                 <section>
                     <section>
-                        <h2>Classes</h2>
+                        <h2>Klase</h2>
 
+                        <div class="row">
+                            <div class="column">
+                                <h4>ES5</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+function Car(data) {
+  this.model = data.model;
+  this.year = data.year;
+  this.wheels = data.wheels || 4;
+}
 
+Car.prototype.drive = function() {
+  console.log(
+    'Driving ' + this.model);
+}
+
+var yugo = new Car({
+  model: 'Yugo 55', year: 1985 });
+
+yugo.drive();
+                                    </code>
+                                </pre>
+                            </div>
+
+                            <div class="column">
+                                <h4>ES6</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+class Car {
+  constructor (data) {
+    this.model = data.model;
+    this.year = data.year;
+    this.wheels = data.wheels || 4;
+  }
+
+  drive() {
+    console.log(
+      'Driving ' + this.model);
+  }
+}
+
+let yugo = new Car({
+  model: 'Yugo 55', year: 1985 });
+yugo.drive();
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
                     </section>
                     <section>
+                        <h4>Properties</h4>
 
+                        <pre>
+                            <code data-trim contenteditable>
+class Car {
+  constructor ({model, year, wheels=4}) {
+    this.model = model; this.year = year; this.wheels = wheels;
+  }
+
+  get isNew() { return this._isNew; }
+  set isNew(value) { this._isNew = value; }
+
+  drive() {
+    console.log(`Driving ${this.model}`); this.isNew = false;
+  }
+}
+let yugo = new Car({ model: 'Yugo 55', year: 1985 });
+
+yugo.drive();
+console.log(yugo.isNew);
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h4>Naslijeđivanje</h4>
+
+                        <pre>
+                            <code data-trim contenteditable>
+class Car { ... }
+
+class Truck extends Car {
+  constructor ({model, year, wheels=6}) {
+    super({model, year, wheels});
+  }
+
+  drive () {
+    super.drive();
+    console.log(`Driving like a boss with ${this.wheels} wheels`);
+  }
+}
+
+let actros = new Truck({ model: 'Actros', year: 2005 });
+actros.drive();
+                            </code>
+                        </pre>
+
+                        <ul>
+                            <li>Napomena: koristite kompoziciju umjesto nasleđivanja (favor composition over inheritance).</li>
+                        </ul>
                     </section>
                 </section>
 
