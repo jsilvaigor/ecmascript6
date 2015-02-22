@@ -587,7 +587,7 @@ yugo.drive();
                         </div>
                     </section>
                     <section>
-                        <h4>Properties</h4>
+                        <h2>Properties</h2>
 
                         <pre>
                             <code data-trim contenteditable>
@@ -611,7 +611,7 @@ console.log(yugo.isNew);
                         </pre>
                     </section>
                     <section>
-                        <h4>Naslijeđivanje</h4>
+                        <h2>Naslijeđivanje</h2>
 
                         <pre>
                             <code data-trim contenteditable>
@@ -637,6 +637,54 @@ actros.drive();
                             <li>Napomena: koristite kompoziciju umjesto nasleđivanja (favor composition over inheritance).</li>
                         </ul>
                     </section>
+                    <section>
+                        <section>
+                            <h2>Statički metodi</h2>
+
+                            <div class="row">
+                                <div class="column">
+                                    <h4>ES5</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+function Car(data) {
+  // ...
+}
+
+Car.drive = function(data) {
+  console.log('Driving something');
+}
+
+//var yugo = new Car({
+//  model: 'Yugo 55', year: 1985 });
+//yugo.drive();
+
+Car.drive({ road: 'autobahn' });
+                                    </code>
+                                </pre>
+                                </div>
+
+                                <div class="column">
+                                    <h4>ES6</h4>
+                                <pre>
+                                    <code data-trim contenteditable>
+class Car {
+  // ...
+  static drive(data) {
+    console.log('Driving something');
+  }
+}
+
+//let yugo = new Car({
+//  model: 'Yugo 55', year: 1985 });
+//yugo.drive();
+
+Car.drive({ road: 'autobahn' });
+                                    </code>
+                                </pre>
+                                </div>
+                            </div>
+
+                    </section>
                 </section>
 
                 <section>
@@ -644,13 +692,23 @@ actros.drive();
                 </section>
 
                 <section>
-                    <h2>Ostalo</h2>
-                    <ul>
-                        <li>tagged templates<br/><code>upper`${firstName} ${lastName}`</code></li>
-                        <li>podrška za cijeli Unicode</li>
-                        <li>binarni i oktalni literali - <code>0b111110111</code>, <code>0o767</code> = 503</li>
-                        <li>tail calls - rekurzivne funkcije ne izazivaju Stack Overflow grešku</li>
-                    </ul>
+                    <section>
+                        <h2>Ostalo</h2>
+                        <ul>
+                            <li>tagged templates<br/><code>upper`${firstName} ${lastName}`</code></li>
+                            <li>podrška za cijeli Unicode</li>
+                            <li>binarni i oktalni literali - <code>0b111110111</code>, <code>0o767</code> = 503</li>
+                            <li>tail calls - rekurzivne funkcije ne izazivaju Stack Overflow grešku</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Ostalo (nastavak)</h2>
+                        <ul>
+                            <li>simboli - unikatne, nepromjenljive vrijednosti, mogu se koristiti kao property identifikatori</li>
+                            <li>iteratori i for..of petlja</li>
+                            <li>generatori<br/><code>let n = function*() { yield 1; yield 2; }</code></li>
+                        </ul>
+                    </section>
                 </section>
 
                 <section>
