@@ -538,6 +538,29 @@ obj.loadData();
                 </section>
 
                 <section>
+                    <h2>Promises</h2>
+
+                    <pre>
+                        <code data-trim contenteditable>
+function timeout(duration = 0) {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, duration);
+    })
+}
+
+var p = timeout(1000).then(() => {
+    return timeout(2000);
+}).then(() => {
+    throw new Error("hmm");
+}).catch(err => {
+    return Promise.all([timeout(100), timeout(200)]);
+})
+
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
                     <section>
                         <h2>Klase</h2>
 
@@ -690,7 +713,28 @@ Car.drive({ road: 'autobahn' });
                 </section>
 
                 <section>
-                    <h2>Modules</h2>
+                    <section>
+                        <h2>Moduli</h2>
+
+                        <pre>
+                            <code data-trim contenteditable>
+// lib/math.js
+export function sum(x, y) {
+  return x + y;
+}
+export var pi = 3.141593;
+
+// app.js
+import * as math from "lib/math";
+alert("2π = " + math.sum(math.pi, math.pi));
+
+// otherApp.js
+import {sum, pi} from "lib/math";
+alert("2π = " + sum(pi, pi));
+
+                            </code>
+                        </pre>
+                    </section>
                 </section>
 
                 <section>
@@ -701,14 +745,17 @@ Car.drive({ road: 'autobahn' });
                             <li>podrška za cijeli Unicode</li>
                             <li>binarni i oktalni literali - <code>0b111110111</code>, <code>0o767</code> = 503</li>
                             <li>tail calls - rekurzivne funkcije ne izazivaju Stack Overflow grešku</li>
+                            <li>Proširenje osnovne biblioteke<br><code>Math, Array, Object, Number, String</code></li>
                         </ul>
                     </section>
                     <section>
                         <h2>Ostalo (nastavak)</h2>
                         <ul>
+                            <li><code>Set, WeakSet, Map, WeakMap</code> - data strukture</li>
                             <li>simboli - unikatne, nepromjenljive vrijednosti, mogu se koristiti kao property identifikatori</li>
                             <li>iteratori i for..of petlja</li>
                             <li>generatori<br/><code>let n = function*() { yield 1; yield 2; }</code></li>
+                            <li>Proxy objekti</li>
                         </ul>
                     </section>
                 </section>
@@ -777,6 +824,21 @@ Car.drive({ road: 'autobahn' });
                         <li>prelazak na godišnja izdanja - ECMAScript 2015, 2016, 2017...</li>
                         <li><a href="https://github.com/tc39/ecma262" target="_blank">trenutni prijedlozi funkcionalnosti</a></li>
                     </ul>
+                </section>
+
+                <section>
+                    <h2>Linkovi</h2>
+
+                    <ul>
+                        <li><a href="http://odetocode.com/">K. Scott Allen blog - ES6 postovi</a></li>
+                        <li><a href="https://github.com/lukehoban/es6features#readme">Luke Hoban - ES6 features</a></li>
+                        <li><a href="http://www.2ality.com/search/label/esnext">Dr. Alex Rauschmayer blog - ES6 postovi</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Hvala!</h2>
+                    <h2>Pitanja?</h2>
                 </section>
 			</div>
 		</div>
