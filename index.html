@@ -75,8 +75,8 @@
                         <div class="row">
                             <div class="column">
                                 <h4>ES5</h4>
-                            <pre>
-                                <code data-trim contenteditable>
+                                <pre>
+                                    <code data-trim contenteditable>
 function test() {
   var x = 1;
   var y = 2;
@@ -89,11 +89,11 @@ function test() {
   console.log(x, y);
 }
 test();
-                                </code>
-                            </pre>
+                                    </code>
+                                </pre>
                             </div>
 
-                            <div class="column">
+                            <div class="column fragment">
                                 <h4>ES6</h4>
                                 <pre>
                                     <code data-trim contenteditable>
@@ -155,7 +155,7 @@ logName('JavaScript');
                                 </pre>
                             </div>
 
-                            <div class="column">
+                            <div class="column fragment">
                                 <h4>ES6</h4>
                                 <pre>
                                     <code data-trim contenteditable>
@@ -198,7 +198,7 @@ console.log(add(1, 2, 3, 4, 5));
                                 </pre>
                             </div>
 
-                            <div class="column">
+                            <div class="column fragment">
                                 <h4>ES6</h4>
                                 <pre>
                                     <code data-trim contenteditable>
@@ -239,7 +239,7 @@ console.log(
                                 </pre>
                             </div>
 
-                            <div class="column">
+                            <div class="column fragment">
                                 <h4>ES6</h4>
                                 <pre>
                                     <code data-trim contenteditable>
@@ -357,7 +357,7 @@ console.log('Više linija\n' +
                                 </pre>
                         </div>
 
-                        <div class="column">
+                        <div class="column fragment">
                             <h4>ES6</h4>
                                 <pre>
                                     <code data-trim contenteditable>
@@ -396,7 +396,7 @@ var obj = {
     // prečica za metode - 'toString: function() {}'
     toString() {
      // poziv metoda osnovne klase sa 'super'
-     return "d " + super.toString();
+     return 'd ' + super.toString();
     },
 
     // dinamička imena property-a
@@ -433,7 +433,7 @@ console.log(
                                 </pre>
                             </div>
 
-                            <div class="column">
+                            <div class="column fragment">
                                 <h4>ES6</h4>
                                 <pre>
                                     <code data-trim contenteditable>
@@ -469,7 +469,7 @@ console.log('2 + 3 = ', add(2, 3));
                                 </pre>
                             </div>
 
-                            <div class="column">
+                            <div class="column fragment">
                                 <h4>ES6</h4>
                                 <pre>
                                     <code data-trim contenteditable>
@@ -512,7 +512,7 @@ obj.loadData();
                                 </pre>
                             </div>
 
-                            <div class="column">
+                            <div class="column fragment">
                                 <h4>ES6</h4>
                                 <pre>
                                     <code data-trim contenteditable>
@@ -545,7 +545,7 @@ obj.loadData();
 function timeout(duration = 0) {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, duration);
-    })
+    });
 }
 
 var p = timeout(1000).then(() => {
@@ -554,7 +554,7 @@ var p = timeout(1000).then(() => {
     throw new Error("hmm");
 }).catch(err => {
     return Promise.all([timeout(100), timeout(200)]);
-})
+});
 
                         </code>
                     </pre>
@@ -588,7 +588,7 @@ yugo.drive();
                                 </pre>
                             </div>
 
-                            <div class="column">
+                            <div class="column fragment">
                                 <h4>ES6</h4>
                                 <pre>
                                     <code data-trim contenteditable>
@@ -677,11 +677,11 @@ function Car(data) {
 }
 
 Car.drive = function(data) {
-  console.log('Driving something');
+  console.log('Driving...');
 }
 
 //var yugo = new Car({
-//  model: 'Yugo 55', year: 1985 });
+// model: 'Yugo 55', year: 1985 });
 //yugo.drive();
 
 Car.drive({ road: 'autobahn' });
@@ -689,19 +689,19 @@ Car.drive({ road: 'autobahn' });
                             </pre>
                             </div>
 
-                            <div class="column">
+                            <div class="column fragment">
                                 <h4>ES6</h4>
                             <pre>
                                 <code data-trim contenteditable>
 class Car {
   // ...
   static drive(data) {
-    console.log('Driving something');
+    console.log('Driving...');
   }
 }
 
 //let yugo = new Car({
-//  model: 'Yugo 55', year: 1985 });
+// model: 'Yugo 55', year: 1985 });
 //yugo.drive();
 
 Car.drive({ road: 'autobahn' });
@@ -716,7 +716,7 @@ Car.drive({ road: 'autobahn' });
                     <section>
                         <h2>Moduli</h2>
 
-                        <pre>
+                        <pre class="fragment">
                             <code data-trim contenteditable>
 // lib/math.js
 export function sum(x, y) {
@@ -832,7 +832,7 @@ alert("2π = " + sum(pi, pi));
                     <section>
                         <h2>Frameworks / languages</h2>
                         <ul>
-                            <li><a href="http://www.typescriptlang.org/" target="_blank">TypeScript</a> 2.0 - nadskup ES6</li>
+                            <li><a href="http://www.typescriptlang.org/" target="_blank">TypeScript 2.0</a> - nadskup ES6</li>
                             <li><a href="https://github.com/angular/angular" target="_blank">Angular 2.0</a> - AtScript, nadskup TypeScript-a (nezvanično)</li>
                             <li><a href="http://emberjs.com/" target="_blank">Ember</a> - modules, promises</li>
                             <li><a href="http://aurelia.io/" target="_blank">Aurelia</a> - ES6 / ES7</li>
@@ -861,6 +861,7 @@ alert("2π = " + sum(pi, pi));
                         <li><a href="https://github.com/lukehoban/es6features#readme" target="_blank">Luke Hoban - ES6 features</a></li>
                         <li><a href="http://www.2ality.com/search/label/esnext" target="_blank">Dr. Alex Rauschmayer blog - ES6 postovi</a></li>
                         <li><a href="https://leanpub.com/understandinges6/read" target="_blank">Nicholas C. Zakas - Understanding ECMAScript 6</a></li>
+                        <li><a href="http://jsmodules.io/" target="_blank">JS Modules</a> </li>
                     </ul>
                 </section>
 
