@@ -735,6 +735,27 @@ alert("2π = " + sum(pi, pi));
                             </code>
                         </pre>
                     </section>
+                    <section>
+                        <h2>Module loader</h2>
+
+                        <pre>
+                            <code data-trim contenteditable>
+System.import('some_module')
+    .then(some_module => {
+      // Use some_module
+    })
+    .catch(error => {
+      //...
+    });
+                            </code>
+                        </pre>
+
+                        <ul>
+                            <li><code>System</code> je default loader</li>
+                            <li>Kofigurabilan je</li>
+                            <li>Može da radi sa AMD ili CommonJS modulima</li>
+                        </ul>
+                    </section>
                 </section>
 
                 <section>
