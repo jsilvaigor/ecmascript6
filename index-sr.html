@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>ECMAScript 2015 (ES6) - New JavaScript version</title>
+		<title>ECMAScript 2015 (ES6) - Nova verzija JavaScript-a</title>
 
-		<meta name="description" content="A presentation on new version of JavaScript">
+		<meta name="description" content="Prezentacija o novoj verziji JavaScript-a">
 		<meta name="author" content="Miroslav Popović">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -43,31 +43,31 @@
 			<div class="slides">
 				<section>
 					<h1>ECMAScript 2015 (ES6)</h1>
-					<h3>New JavaScript version</h3>
+					<h3>Nova verzija JavaScript-a</h3>
 					<p>
 						<small>
-                            Author: <a href="http://blog.miroslavpopovic.com">Miroslav Popovic</a> /
+                            Autor: <a href="http://blog.miroslavpopovic.com">Miroslav Popovic</a> /
                             <a href="http://twitter.com/miroslavpopovic">@miroslavpopovic</a>
                         </small><br>
                         <small>
                             <a href="https://github.com/miroslavpopovic/ecmascript6">Fork me</a> /
-                            <a href="index-sr.html">Srpska verzija</a>
+                            <a href="index.html">English version</a>
                         </small>
 					</p>
 				</section>
 
 				<section>
-					<h2>A little bit of history</h2>
+					<h2>Malo istorije</h2>
                     <ul>
                         <li>Brendan Eich, Netscape</li>
                         <li>LiveScript, 1994</li>
-                        <li>ECMA standardization, 1996</li>
+                        <li>ECMA standardizacija, 1996</li>
                         <li>ECMAScript 3, 1999</li>
-                        <li>ECMAScript 4, development stopped</li>
+                        <li>ECMAScript 4, obustavljen razvoj</li>
                         <li>ECMAScript 5, 2009</li>
                         <li>ECMAScript 5.1, 2011</li>
                         <li>ECMAScript 6 (Harmony, ES6, ES 2015), 2015</li>
-                        <li>ECMAScript 7, future version</li>
+                        <li>ECMAScript 7, budućnost</li>
                     </ul>
 				</section>
 
@@ -119,17 +119,17 @@ test();
                     </section>
 
                     <section>
-                        <h2>let and const</h2>
+                        <h2>let i const</h2>
                         <ul>
-                            <li><code>let</code> - variable definition close to the usage</li>
-                            <li><code>const</code> - constant, not allowed to be changed</li>
+                            <li><code>let</code> - definisanje varijabli što bliže mjestu korištenja</li>
+                            <li><code>const</code> - konstanta, nije je moguće mijenjati</li>
                         </ul>
                         <pre>
                             <code data-trim contenteditable>
 function test() {
   const PI = 3.141569;
 
-  // PI = 6; -> ERROR
+  // PI = 6; -> GREŠKA
 
   console.log(PI);
 }
@@ -140,7 +140,7 @@ function test() {
 
                 <section>
                     <section>
-                        <h2>Functions: default parameters</h2>
+                        <h2>Funkcije: default parametri</h2>
 
                         <div class="row">
                             <div class="column">
@@ -177,7 +177,7 @@ logName('JavaScript');
                     </section>
 
                     <section>
-                        <h2>Functions: rest parameters</h2>
+                        <h2>Funkcije: rest parametri</h2>
 
                         <div class="row">
                             <div class="column">
@@ -254,7 +254,7 @@ let numbers = [2, 4, 6];
 
 console.log(add(...numbers));
 
-// Example 2
+// Primjer 2
 let n2 =
   [1, 2, ...numbers, 7, ...[2, 3]];
 console.log(n2);
@@ -286,7 +286,7 @@ console.log(lat, lng);
                     </section>
                     <section>
                         <h2>Destructuring</h2>
-                        <h3>complex objects</h3>
+                        <h3>kompleksni objekti</h3>
 
                         <pre>
                             <code data-trim contenteditable>
@@ -309,7 +309,7 @@ console.log(author, tag, softcover);
                     </section>
                     <section>
                         <h2>Destructuring</h2>
-                        <h3>function parameters</h3>
+                        <h3>parametri funkcije</h3>
 
                         <pre>
                             <code data-trim contenteditable>
@@ -354,8 +354,8 @@ var add = function(x, y) {
 };
 
 console.log(add(10, 5));
-console.log('Multiple lines\n' +
-    'with plus operator');
+console.log('Više linija\n' +
+    'sa plus operatorom');
                                     </code>
                                 </pre>
                         </div>
@@ -376,8 +376,8 @@ let add = function(x, y) {
 };
 
 console.log(add(10, 5));
-console.log(`Support for
-    multiple lines with backticks`);
+console.log(`Podrška
+    za više linija sa backticks`);
                                     </code>
                                 </pre>
                         </div>
@@ -386,23 +386,23 @@ console.log(`Support for
                 </section>
 
                 <section>
-                    <h2>Extended object literals</h2>
+                    <h2>Prošireni object literals</h2>
                         <pre>
                             <code data-trim contenteditable>
 var obj = {
-    // defining prototype on object creation
+    // definisanje prototipa prilikom kreiranja objekta
     __proto__: theProtoObj,
 
-    // shortcut for ‘handler: handler’
+    // prečica za ‘handler: handler’
     handler,
 
-    // shortcut for methods - 'toString: function() {}'
+    // prečica za metode - 'toString: function() {}'
     toString() {
-     // base class method call with 'super'
+     // poziv metoda osnovne klase sa 'super'
      return 'd ' + super.toString();
     },
 
-    // dynamic property names
+    // dinamička imena property-a
     [ 'prop_' + (() => 42)() ]: 42
 };
                             </code>
@@ -565,7 +565,7 @@ var p = timeout(1000).then(() => {
 
                 <section>
                     <section>
-                        <h2>Classes</h2>
+                        <h2>Klase</h2>
 
                         <div class="row">
                             <div class="column">
@@ -641,7 +641,7 @@ console.log(yugo.isNew);
                         </pre>
                     </section>
                     <section>
-                        <h2>Inheritance</h2>
+                        <h2>Naslijeđivanje</h2>
 
                         <pre>
                             <code data-trim contenteditable>
@@ -664,11 +664,11 @@ actros.drive();
                         </pre>
 
                         <ul>
-                            <li>Note: favor composition over inheritance.</li>
+                            <li>Napomena: koristite kompoziciju umjesto nasleđivanja (favor composition over inheritance).</li>
                         </ul>
                     </section>
                     <section>
-                        <h2>Static methods</h2>
+                        <h2>Statički metodi</h2>
 
                         <div class="row">
                             <div class="column">
@@ -717,7 +717,7 @@ Car.drive({ road: 'autobahn' });
 
                 <section>
                     <section>
-                        <h2>Modules</h2>
+                        <h2>Moduli</h2>
 
                         <pre class="fragment">
                             <code data-trim contenteditable>
@@ -754,39 +754,39 @@ System.import('some_module')
                         </pre>
 
                         <ul>
-                            <li><code>System</code> is a default loader</li>
-                            <li>Configurable</li>
-                            <li>Can work with AMD or CommonJS modules</li>
+                            <li><code>System</code> je default loader</li>
+                            <li>Kofigurabilan je</li>
+                            <li>Može da radi sa AMD ili CommonJS modulima</li>
                         </ul>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2>Other features</h2>
+                        <h2>Ostalo</h2>
                         <ul>
                             <li>tagged templates<br/><code>upper`${firstName} ${lastName}`</code></li>
-                            <li>support for entire Unicode</li>
-                            <li>binary and octal literals - <code>0b111110111</code>, <code>0o767</code> = 503</li>
-                            <li>tail calls - recursive functions do not cause Stack Overflow error</li>
-                            <li>extensions for base library<br><code>Math, Array, Object, Number, String</code></li>
+                            <li>podrška za cijeli Unicode</li>
+                            <li>binarni i oktalni literali - <code>0b111110111</code>, <code>0o767</code> = 503</li>
+                            <li>tail calls - rekurzivne funkcije ne izazivaju Stack Overflow grešku</li>
+                            <li>Proširenje osnovne biblioteke<br><code>Math, Array, Object, Number, String</code></li>
                         </ul>
                     </section>
                     <section>
-                        <h2>Other features (continued)</h2>
+                        <h2>Ostalo (nastavak)</h2>
                         <ul>
-                            <li><code>Set, WeakSet, Map, WeakMap</code> - data structures</li>
-                            <li>symbols - unique, constant values, can be used as property identifiers</li>
-                            <li>iterators and for..of loop</li>
-                            <li>generators<br/><code>let n = function*() { yield 1; yield 2; }</code></li>
-                            <li>Proxy objects</li>
+                            <li><code>Set, WeakSet, Map, WeakMap</code> - data strukture</li>
+                            <li>simboli - unikatne, nepromjenljive vrijednosti, mogu se koristiti kao property identifikatori</li>
+                            <li>iteratori i for..of petlja</li>
+                            <li>generatori<br/><code>let n = function*() { yield 1; yield 2; }</code></li>
+                            <li>Proxy objekti</li>
                         </ul>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2>ECMAScript 2015 today</h2>
+                        <h2>ECMAScript 2015 danas</h2>
                         <ul>
                             <li>
                                 <a href="http://kangax.github.io/compat-table/es6/" target="_blank">http://kangax.github.io/compat-table/es6/</a>
@@ -798,16 +798,16 @@ System.import('some_module')
                     </section>
 
                     <section>
-                        <h2>Compilers (transpilers)</h2>
+                        <h2>Kompajleri (transpilers)</h2>
                         <ul>
                             <li>
                                 <a href="https://github.com/google/traceur-compiler" target="_blank">Traceur</a>
-                                - first JS.next compiler created by Google
+                                - prvi JS.next kompajler koji je kreirao Google
                             </li>
-                            <li>used by Angular team</li>
-                            <li>extensible</li>
-                            <li><a href="https://babeljs.io/">Babel.js</a> (6to5) - the best transpiler today</li>
-                            <li>used by Aurelia team</li>
+                            <li>koristi ga Angular tim</li>
+                            <li>podržava i proširenja, kao npr. AtScript podrška za Angular</li>
+                            <li><a href="https://babeljs.io/">Babel.js</a> (6to5) - najbolji kompajler danas</li>
+                            <li>koristi ga Aurelia tim</li>
                             <li>...</li>
                         </ul>
                     </section>
@@ -819,11 +819,11 @@ System.import('some_module')
                                 <a href="https://github.com/ModuleLoader/es6-module-loader" target="_blank">ES6 Module Loader</a> - polyfill
                             </li>
                             <li>
-                                <a href="https://github.com/systemjs/systemjs" target="_blank">SystemJS</a> - universal module loader
+                                <a href="https://github.com/systemjs/systemjs" target="_blank">SystemJS</a> - univerzalni module loader
                                 <ul>
                                     <li>ES6, AMD, CommonJS, globals</li>
-                                    <li>works with both Traceur and Babel.js</li>
-                                    <li>a base for <a href="http://jspm.io/" target="_blank">jspm</a> package manager</li>
+                                    <li>radi i sa Traceur i Babel.js</li>
+                                    <li>osnova za <a href="http://jspm.io/" target="_blank">jspm</a> package manager</li>
                                 </ul>
                             </li>
                             <li>...</li>
@@ -831,7 +831,7 @@ System.import('some_module')
                     </section>
 
                     <section>
-                        <h2>Development tools</h2>
+                        <h2>Razvojni alati</h2>
 
                         <ul>
                             <li>
@@ -840,7 +840,7 @@ System.import('some_module')
                                 </a><br/>
                                 <small>
                                     <a href="http://visualstudio.uservoice.com/forums/121579-visual-studio/suggestions/7017377-support-for-es6-modules" target="_blank">
-                                        Vote for adding ES6 module support to VS
+                                        Glasajte za dodavanje podrške za ES6 module u VS
                                     </a>
                                 </small>
                             </li>
@@ -856,8 +856,8 @@ System.import('some_module')
                     <section>
                         <h2>Frameworks / languages</h2>
                         <ul>
-                            <li><a href="http://www.typescriptlang.org/" target="_blank">TypeScript 2.0</a> - superset ES6</li>
-                            <li><a href="https://github.com/angular/angular" target="_blank">Angular 2.0</a> - built with TypeScript</li>
+                            <li><a href="http://www.typescriptlang.org/" target="_blank">TypeScript 2.0</a> - nadskup ES6</li>
+                            <li><a href="https://github.com/angular/angular" target="_blank">Angular 2.0</a> - pisan u TypeScript-u</li>
                             <li><a href="http://emberjs.com/" target="_blank">Ember</a> - modules, promises</li>
                             <li><a href="http://aurelia.io/" target="_blank">Aurelia</a> - ES6 / ES7</li>
                         </ul>
@@ -865,11 +865,11 @@ System.import('some_module')
                 </section>
 
                 <section>
-                    <h2>Future</h2>
+                    <h2>Budućnost</h2>
                     <ul>
                         <li>ES7</li>
-                        <li>yearly editions - ECMAScript 2015, 2016, 2017...</li>
-                        <li><a href="https://github.com/tc39/ecma262" target="_blank">current recommendations</a></li>
+                        <li>prelazak na godišnja izdanja - ECMAScript 2015, 2016, 2017...</li>
+                        <li><a href="https://github.com/tc39/ecma262" target="_blank">trenutni prijedlozi funkcionalnosti</a></li>
                         <li><code>Object.observe()</code></li>
                         <li><code>async/await</code></li>
                         <li>...</li>
@@ -877,21 +877,21 @@ System.import('some_module')
                 </section>
 
                 <section>
-                    <h2>Links</h2>
+                    <h2>Linkovi</h2>
 
                     <ul>
-                        <li><a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts" target="_blank">ES6 specification</a></li>
-                        <li><a href="http://odetocode.com/" target="_blank">K. Scott Allen blog - ES6 posts</a></li>
+                        <li><a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts" target="_blank">ES6 specifikacija</a></li>
+                        <li><a href="http://odetocode.com/" target="_blank">K. Scott Allen blog - ES6 postovi</a></li>
                         <li><a href="https://github.com/lukehoban/es6features#readme" target="_blank">Luke Hoban - ES6 features</a></li>
-                        <li><a href="http://www.2ality.com/search/label/esnext" target="_blank">Dr. Alex Rauschmayer blog - ES6 posts</a></li>
+                        <li><a href="http://www.2ality.com/search/label/esnext" target="_blank">Dr. Alex Rauschmayer blog - ES6 postovi</a></li>
                         <li><a href="https://leanpub.com/understandinges6/read" target="_blank">Nicholas C. Zakas - Understanding ECMAScript 6</a></li>
                         <li><a href="http://jsmodules.io/" target="_blank">JS Modules</a> </li>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Thank you!</h2>
-                    <h2>Questions?</h2>
+                    <h2>Hvala!</h2>
+                    <h2>Pitanja?</h2>
                 </section>
 			</div>
 		</div>
