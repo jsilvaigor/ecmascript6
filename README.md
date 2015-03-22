@@ -1,6 +1,6 @@
 # ECMAScript 2015 (ES6) - What's new
 
-A presentation on ECMAScript 6 features for a local user group. It's not in English, although the most samples are.
+A presentation on ECMAScript 6 features for a local user group.
 
 The final presentation is available here: [http://miroslavpopovic.github.io/ecmascript6/](http://miroslavpopovic.github.io/ecmascript6/)
 
